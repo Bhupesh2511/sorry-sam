@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff1e8">
+<title>One Thing I Wish I Could Tell You, Samm ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Patrick+Hand&family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root {
+  --ink: #633c43;
+  --rose: #c95470;
+  --rose-dark: #a83d59;
+  --paper: #fffaf1;
+  --pink: #ffe0df;
+  --tape: #f4b9aa;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: 'Quicksand', sans-serif;
+  background:
+    radial-gradient(ellipse at 15% 10%, #fff9ec 0, transparent 35%),
+    radial-gradient(ellipse at 85% 80%, #ffd9dc 0, transparent 38%),
+    #f9e5d9;
+  overflow-x: hidden;
+}
+body::before {
+  content: "";
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  opacity: .24;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.13'/%3E%3C/svg%3E");
+}
+.floating-layer { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 5; }
+.float-heart {
+  position: absolute; bottom: -35px; opacity: 0;
+  animation: drift linear forwards; font-size: 18px;
+}
+@keyframes drift {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  12% { opacity: .72; }
+  100% { transform: translateY(-115vh) rotate(28deg); opacity: 0; }
+}
+.wrap { position: relative; z-index: 1; width: min(100% - 28px, 760px); margin: 0 auto; padding: 26px 0 42px; }
+.top-note { text-align: center; font: 20px 'Patrick Hand', cursive; color: #9e5968; margin: 0 0 14px; transform: rotate(-2deg); }
+.page { display: none; animation: pageIn .55s ease both; }
+.page.active { display: block; }
+@keyframes pageIn { from { opacity: 0; transform: translateY(12px) rotate(.4deg); } to { opacity: 1; transform: translateY(0) rotate(0); } }
+.paper {
+  position: relative; padding: clamp(26px, 6vw, 54px);
+  background:
+    repeating-linear-gradient(to bottom, transparent 0, transparent 31px, rgba(207,150,143,.15) 32px, transparent 33px),
+    var(--paper);
+  border: 1px solid rgba(178,117,107,.24);
+  border-radius: 5px 7px 4px 6px;
+  box-shadow: 0 14px 35px rgba(104,58,61,.13), 4px 5px 0 rgba(255,255,255,.45);
+  transform: rotate(-.35deg);
+  overflow: hidden;
+}
+.paper::before {
+  content: ""; position: absolute; top: 0; left: 24px; right: 24px; height: 13px;
+  background: repeating-linear-gradient(90deg, #f2b7a7 0 18px, #f7c9bb 18px 36px);
+  opacity: .45; clip-path: polygon(0 0,100% 0,98% 100%,2% 100%);
+}
+.tape {
+  position: absolute; width: 92px; height: 25px; top: 12px; right: 25px;
+  background: rgba(245,179,164,.62); transform: rotate(8deg); box-shadow: 0 1px 2px #ad777344;
+}
+.sticker { position: absolute; font-size: 28px; opacity: .86; }
+.sticker.one { top: 26px; left: 18px; transform: rotate(-15deg); }
+.sticker.two { right: 22px; bottom: 22px; transform: rotate(13deg); }
+.kicker { font: 20px 'Patrick Hand', cursive; color: #b16b78; text-align: center; margin: 8px 0 10px; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { font: clamp(39px, 8vw, 65px)/1.05 'Patrick Hand', cursive; text-align: center; color: #a63856; margin: 22px auto 15px; max-width: 600px; }
+h2 { font: clamp(29px, 6vw, 43px)/1.1 'Patrick Hand', cursive; color: #a63856; margin-bottom: 20px; }
+h3 { font: 26px 'Patrick Hand', cursive; color: #a63856; }
+p { font-size: 16px; line-height: 1.9; }
+.center { text-align: center; }
+.subtitle { font: 22px 'Patrick Hand', cursive; text-align: center; line-height: 1.5; color: #8d5663; margin: 20px auto 28px; }
+.big-heart { text-align: center; font-size: 51px; margin: 18px 0 6px; animation: pulse 1.8s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.09); } }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 13px 22px; border: 1px solid #c65c75; border-radius: 7px 14px 8px 13px;
+  color: white; background: #c95470; font: 19px 'Patrick Hand', cursive;
+  text-decoration: none; cursor: pointer; box-shadow: 0 4px 0 #a83d59;
+  transition: transform .18s ease, box-shadow .18s ease; margin: 5px;
+}
+.btn:hover { transform: translateY(-2px) rotate(-.5deg); box-shadow: 0 6px 0 #a83d59; }
+.btn:active { transform: translateY(2px); box-shadow: 0 2px 0 #a83d59; }
+.btn.secondary { color: #a83d59; background: #fff7ee; box-shadow: 0 4px 0 #e6b8b3; border-color: #e7b4b1; }
+.button-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; margin-top: 26px; }
+.letter { font-size: 17px; line-height: 1.95; }
+.letter p { margin: 0 0 15px; }
+.signature { text-align: right; font: 23px 'Patrick Hand', cursive; color: #a63856; margin-top: 24px; }
+.washi { background: #ffe0dc; display: inline-block; padding: 5px 13px; transform: rotate(-1.5deg); box-decoration-break: clone; }
+.list { list-style: none; padding: 0; margin: 15px 0; }
+.list li { padding: 11px 5px 11px 38px; position: relative; font-size: 16px; line-height: 1.65; }
+.list li::before { content: "♡"; position: absolute; left: 7px; top: 8px; color: #c95470; font: 27px 'Patrick Hand', cursive; }
+.memory-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; margin-top: 18px; }
+.polaroid { background: #fff; padding: 10px 10px 16px; box-shadow: 0 5px 12px #603d4020; transform: rotate(-2deg); text-align: center; }
+.polaroid:nth-child(even) { transform: rotate(2.5deg); }
+.photo-placeholder { min-height: 112px; display: grid; place-items: center; background: linear-gradient(145deg,#f8d3d2,#f9e8cb 55%,#d7e5d7); font-size: 42px; }
+.polaroid p { font: 18px 'Patrick Hand', cursive; line-height: 1.35; margin: 10px 2px 0; }
+.note { border-left: 3px solid #e9a7a6; padding: 8px 0 8px 16px; margin: 20px 0; font-style: italic; }
+.footer { text-align: center; font: 17px 'Patrick Hand', cursive; color: #95616a; margin: 19px 0 0; }
+.page-dots { display: flex; justify-content: center; gap: 8px; margin: 22px 0 0; }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: #d7a1a4; border: 0; padding: 0; cursor: pointer; }
+.dot.active { background: #ad3e5b; transform: scale(1.25); }
+.tiny { font-size: 13px; line-height: 1.7; color: #916773; text-align: center; margin-top: 20px; }
+@media (max-width: 520px) {
+  .wrap { width: min(100% - 18px, 760px); padding-top: 15px; }
+  .paper { padding: 29px 22px; }
+  p, .letter { font-size: 15px; }
+  .memory-grid { gap: 10px; }
+  .photo-placeholder { min-height: 90px; }
+  .btn { font-size: 18px; padding: 12px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+}
+</style>
+</head>
+<body>
+<div class="floating-layer" id="floatingLayer" aria-hidden="true"></div>
+
+<main class="wrap">
+  <p class="top-note">a tiny scrapbook made with a sincere heart ♡</p>
+
+  <!-- PAGE 1: OPENING -->
+  <section class="page active" id="page1">
+    <div class="paper">
+      <span class="tape"></span><span class="sticker one">🌷</span><span class="sticker two">🧸</span>
+      <p class="kicker">to my special friend...</p>
+      <div class="big-heart">♡</div>
+      <h1>One thing<br>I wish I could<br>tell you...</h1>
+      <p class="subtitle">It's not just a message.<br>It's something I truly mean.</p>
+      <div class="center">
+        <button class="btn" onclick="goTo(2)">Open when you're ready ♡</button>
+      </div>
+      <p class="footer">still your gajani, with a sorry heart 🤍</p>
+    </div>
+  </section>
+
+  <!-- PAGE 2: THE APOLOGY -->
+  <section class="page" id="page2">
+    <div class="paper">
+      <span class="tape"></span><span class="sticker one">💌</span><span class="sticker two">🌼</span>
+      <p class="kicker">a letter for you</p>
+      <h2>Hey, Samm ♡</h2>
+      <div class="letter">
+        <p>I want to say I'm genuinely sorry for the way I treated you.</p>
+        <p>You didn't do anything wrong, and you didn't deserve me shouting at you. I let my feelings take over, behaved weirdly, and put you in a situation that made you feel embarrassed and uncomfortable.</p>
+        <p>That was on me. I won't make excuses for it or try to make it seem smaller than it was. I should have treated you with more patience, care, and respect.</p>
+        <p>I'm sorry that someone who is supposed to make you feel safe and valued made you feel the opposite. I wish I had handled things differently.</p>
+        <p><strong>You deserved better from me, Samm, and I'm truly sorry.</strong></p>
+      </div>
+      <p class="signature">— your gajani, who knows they messed up ♡</p>
+      <div class="button-row">
+        <button class="btn" onclick="goTo(3)">There's one more thing →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 3: ACCOUNTABILITY -->
+  <section class="page" id="page3">
+    <div class="paper">
+      <span class="tape"></span><span class="sticker one">🩷</span><span class="sticker two">🕊️</span>
+      <p class="kicker">not excuses. just the truth.</p>
+      <h2>Why I'm saying sorry</h2>
+      <ul class="list">
+        <li>Because you weren't at fault, and I shouldn't have taken my feelings out on you.</li>
+        <li>Because shouting at you was unfair, and I understand why it hurt.</li>
+        <li>Because making you feel embarrassed or uncomfortable is the last thing I should have done.</li>
+        <li>Because our friendship matters to me, and so do your feelings.</li>
+      </ul>
+      <div class="note">I'm not asking you to forget what happened. I want to learn from it and do better through my actions.</div>
+      <div class="button-row">
+        <button class="btn" onclick="goTo(4)">A little friendship page →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 4: FRIENDSHIP -->
+  <section class="page" id="page4">
+    <div class="paper">
+      <span class="tape"></span><span class="sticker one">📎</span><span class="sticker two">🌸</span>
+      <p class="kicker">little things that matter</p>
+      <h2>Our friendship ♡</h2>
+      <p>I don't want to pretend one website can fix what I did. I just wanted to make something small to tell you that our friendship has meant a lot to me.</p>
+      <div class="memory-grid">
+        <div class="polaroid"><div class="photo-placeholder">☁️💗</div><p>The random talks</p></div>
+        <div class="polaroid"><div class="photo-placeholder">🌷✨</div><p>The silly moments</p></div>
+        <div class="polaroid"><div class="photo-placeholder">🧸🤍</div><p>The times we laughed</p></div>
+        <div class="polaroid"><div class="photo-placeholder">🌙💌</div><p>The little things I'll remember</p></div>
+      </div>
+      <p class="tiny">These are scrapbook placeholders, not real photos. You can add your own pictures later if you both feel comfortable with that.</p>
+      <div class="button-row">
+        <button class="btn" onclick="goTo(5)">One tiny surprise →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 5: SURPRISE -->
+  <section class="page" id="page5">
+    <div class="paper">
+      <span class="tape"></span><span class="sticker one">🎁</span><span class="sticker two">🐻</span>
+      <p class="kicker">a small reminder for you</p>
+      <h2>You matter, Samm ♡</h2>
+      <p>I hope you never feel that you have to ignore your own feelings just to keep a friendship. You deserve kindness, comfort, and respect — always.</p>
+      <p>I'm sorry for hurting you. I hope this little page brings even a tiny smile, but it's okay if it doesn't. Your feelings matter more than how this website turns out.</p>
+      <div class="center" style="font-size:45px;margin:22px 0;">🌷 🧸 💌</div>
+      <div class="button-row">
+        <button class="btn" onclick="goTo(6)">Read the last page →</button>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="page-dots" aria-label="Website pages">
+    <button class="dot active" aria-label="Page 1" onclick="goTo(1)"></button>
+    <button class="dot" aria-label="Page 2" onclick="goTo(2)"></button>
+    <button class="dot" aria-label="Page 3" onclick="goTo(3)"></button>
+    <button class="dot" aria-label="Page 4" onclick="goTo(4)"></button>
+    <button class="dot" aria-label="Page 5" onclick="goTo(5)"></button>
+  </div>
+  <p class="tiny">made with care, not expectations ♡</p>
+</main>
+
+<script>
+const totalPages = 5;
+function goTo(pageNumber) {
+  const target = Math.max(1, Math.min(totalPages, Number(pageNumber) || 1));
+  document.querySelectorAll('.page').forEach((page, index) => {
+    page.classList.toggle('active', index === target - 1);
+  });
+  document.querySelectorAll('.dot').forEach((dot, index) => {
+    dot.classList.toggle('active', index === target - 1);
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+const layer = document.getElementById('floatingLayer');
+const symbols = ['♡', '♥', '✿', '✧', '💕'];
+function makeFloat() {
+  const item = document.createElement('span');
+  item.className = 'float-heart';
+  item.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+  item.style.left = (Math.random() * 100) + '%';
+  item.style.fontSize = (13 + Math.random() * 17) + 'px';
+  item.style.animationDuration = (7 + Math.random() * 6) + 's';
+  layer.appendChild(item);
+  window.setTimeout(() => item.remove(), 14000);
+}
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  window.setInterval(makeFloat, 950);
+}
+</script>
+</body>
+</html>
